@@ -194,3 +194,6 @@ RDEPENDS_python3-ptest_remove_libc-glibc = " \
 # webos-rpi.inc _removes "kernel-modules" from MACHINE_EXTRA_RRECOMMENDS, and _remove happens last, so we can't add it back to
 # MACHINE_EXTRA_RRECOMMENDS.
 IMAGE_INSTALL_append_rpi = " kernel-modules"
+
+# Move from base_prefix to prefix for ostree to update it
+ros_prefix = "${prefix}/opt/ros/${ROS_DISTRO}"
