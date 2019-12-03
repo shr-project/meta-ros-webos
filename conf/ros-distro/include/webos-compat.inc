@@ -194,6 +194,3 @@ RDEPENDS_python3-ptest_remove_libc-glibc = " \
 # webos-rpi.inc _removes "kernel-modules" from MACHINE_EXTRA_RRECOMMENDS, and _remove happens last, so we can't add it back to
 # MACHINE_EXTRA_RRECOMMENDS.
 IMAGE_INSTALL_append_rpi = " kernel-modules"
-
-# otherwise e.g. vboxguest needed by qemux86 webos-images isn't enabled and do_rootfs fails
-PREFERRED_VERSION_linux-yocto = "4.18%"
