@@ -199,3 +199,5 @@ ROS_WORLD_SKIP_GROUPS += "pyqt5"
 # mongodb is blacklisted in webOS OSE:
 # mongodb was skipped: Recipe is blacklisted: src/mongo/util/net/ssl_manager.cpp:557:70: error: invalid conversion from 'size_t*' {aka 'unsigned int*'} to 'long unsigned int*' [-fpermissive] http://caprica.lgsvl.com:8080/Errors/Details/1509767
 ROS_WORLD_SKIP_GROUPS += "mongodb"
+
+ROS_WORLD_SKIP_GROUPS_remove = "world-license"
