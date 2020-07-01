@@ -377,3 +377,5 @@ PNBLACKLIST[xmlsec1] ?= "ERROR: xmlsec1-1.2.28-r0 do_configure: configure failed
 PNBLACKLIST[remmina] ?= "Depends on blacklisted avahi-ui"
 PNBLACKLIST[telepathy-idle] ?= "Depends on blacklisted telepathy-glib"
 PNBLACKLIST[packagegroup-meta-multimedia] ?= "Depends on blacklisted gstd, gerbera, rygel"
+
+PNBLACKLIST[ostree-kernel-initramfs] ?= "Temporarily blacklist until issues reported in https://github.com/advancedtelematic/meta-updater/pull/740 are resolved"
