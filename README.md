@@ -1,5 +1,3 @@
-# Branch `[thud]`
-
 # UNDER CONSTRUCTION!
 
 `meta-ros-webos` is the OpenEmbedded layer for interfacing between `meta-ros`
