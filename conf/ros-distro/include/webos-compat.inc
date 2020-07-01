@@ -211,6 +211,17 @@ ROS_WORLD_SKIP_GROUPS_remove = "world-license"
 # meta-webos-raspberrypi/recipes-multimedia/gstreamer/gstreamer1.0-plugins-bad_1.14.%.bbappend:PACKAGECONFIG_remove_rpi = "faad"
 ROS_WORLD_SKIP_GROUPS_remove = "world-license-faad"
 
+# Temporarily undo the PREFERRED_PROVIDER_go-native change from
+# https://git.openembedded.org/openembedded-core/commit/?id=c23f9e80492e4b1d47c0ada8eae3decf736253c7
+# because of the meta-virtualization issues reported in:
+# https://lists.yoctoproject.org/g/meta-virtualization/message/5473
+# the fix proposed in:
+# https://lists.yoctoproject.org/g/meta-virtualization/message/5524
+# should be implemented soon:
+# https://lists.yoctoproject.org/g/meta-virtualization/message/5523
+# then we can drop this again
+PREFERRED_PROVIDER_go-native ?= "go-native"
+
 PNBLACKLIST[nagios-core] ?= "${@bb.utils.contains('BBFILE_COLLECTIONS', 'webserver', '', 'Depends on apache2 from meta-webserver which is not included', d)}"
 PNBLACKLIST[nagios-plugins] ?= "${@bb.utils.contains('BBFILE_COLLECTIONS', 'webserver', '', 'Depends on nagios-core which depends on apache2 from meta-webserver which is not included', d)}"
 PNBLACKLIST[nagios-nrpe] ?= "${@bb.utils.contains('BBFILE_COLLECTIONS', 'webserver', '', 'Depends on nagios-core which depends on apache2 from meta-webserver which is not included', d)}"
